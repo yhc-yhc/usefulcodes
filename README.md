@@ -34,5 +34,5 @@ const transCode = sh1sum.digest('hex').substr(0, 36)
 ```
 use nodejs call c++ functions
 
-the issue of my github [https://github.com/nodejs/help/issues/714]
+the issue of my github [issue](https://github.com/nodejs/help/issues/714)
 ```
