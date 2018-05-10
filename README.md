@@ -32,6 +32,25 @@ const transCode = sh1sum.digest('hex').substr(0, 36)
 ```
 
 ```
-use nodejs call c++ functions
+use nodejs call c++ functions, blow is the node-gyp demo
+
+{
+  "targets": [
+    {
+      "target_name": "tool",
+      "sources": [ "cc/test.tool.cc" , "cc/Test.cc", "cc/Test1.cc"],
+      'cflags': ['-fexceptions'],
+      'cflags_cc': ['-fexceptions'],
+      "conditions": [
+        [
+            'OS == "linux"', 
+            {
+              "libraries": ['-ljpeg', '-lexiv2', '-lopencv_core', '-lopencv_highgui', '-lopencv_imgproc']
+            }
+        ]
+      ]
+    }
+  ]
+}
 ```
-the issue of my github [issue](https://github.com/nodejs/help/issues/714)
+the [issue](https://github.com/nodejs/help/issues/714) of my github
